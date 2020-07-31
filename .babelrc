@@ -1,0 +1,32 @@
+{
+  "sourceMaps": true,
+  "comments": true,
+  "presets": [
+    "@babel/preset-typescript",
+    [
+      "@babel/env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    [
+      "module-resolver",
+      {
+        "extensions": [
+          ".ts",
+          ".js",
+          ".json"
+        ],
+        "alias": {
+          "@": "./src"
+        }
+      }
+    ]
+  ]
+}
+
