@@ -1,0 +1,216 @@
+2020-08-29T08:41:38.856Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:42:16.070Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:42:33.327Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:42:57.103Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:44:15.502Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:44:27.621Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:44:34.209Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:44:44.048Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:45:16.436Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:45:32.943Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:45:45.963Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
+2020-08-29T08:47:12.116Z DeprecationWarning -- current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+ DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:333:5
+    at parseConnectionString (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/core/uri_parser.js:685:3)
+    at connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/operations/connect.js:277:3)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:222:5
+    at maybePromise (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/utils.js:719:3)
+    at MongoClient.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongodb/lib/mongo_client.js:218:10)
+    at /Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:714:12
+    at new Promise (<anonymous>)
+    at NativeConnection.Connection.openUri (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/connection.js:711:19)
+    at Mongoose.connect (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/mongoose/lib/index.js:335:15)
+    at Object.exports.mongooseConnect (/Users/levantien/Dev/sotatek/express-typescript-base/src/plugins/mongoose/mongoose.ts:6:17)
+    at App.database (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:78:7)
+    at new App (/Users/levantien/Dev/sotatek/express-typescript-base/src/app.ts:20:10)
+    at Object.<anonymous> (/Users/levantien/Dev/sotatek/express-typescript-base/src/mongoose.ts:6:13)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Module._compile (/Users/levantien/Dev/sotatek/express-typescript-base/node_modules/source-map-support/source-map-support.js:547:25)
