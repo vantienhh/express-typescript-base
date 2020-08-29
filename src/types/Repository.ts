@@ -1,9 +1,5 @@
-import {Document} from 'mongoose'
+import { Document } from 'mongoose'
 
-export interface TypeBaseRepository<T extends Document = Document> {
+export interface TypeBaseRepository<T extends Document = Document> {}
 
-}
-
-export interface TypeProductRepository extends TypeBaseRepository {
-
-}
+export type TypeProductRepository = TypeBaseRepository

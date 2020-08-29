@@ -1,10 +1,11 @@
-import {cpus} from 'os'
+import { config } from 'dotenv'
+import { cpus } from 'os'
 import cluster from 'cluster'
 import App from '@/app'
 
-require('dotenv').config()
-const port = process.env.PORT || 3000
+config()
 
+const port = process.env.PORT || 3000
 const numCPUs = cpus().length
 
 if (cluster.isMaster) {
@@ -25,14 +26,14 @@ function masterProcess() {
 function childProcess() {
   console.log(`Worker ${process.pid} started...`)
 
-  const app = (new App()).express
+  const app = new App().express
 
   app.listen(port, () => {
     return console.log(`server is listening on ${port}`)
   })
 }
 
-cluster.on('exit', (worker) => {
+cluster.on('exit', worker => {
   console.log('mayday! mayday! worker', worker.id, ' is no more!')
   cluster.fork()
 })

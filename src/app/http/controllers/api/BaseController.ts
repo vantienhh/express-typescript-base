@@ -6,7 +6,4 @@ export abstract class BaseController {
   constructor() {
     this.firebase = firebase
   }
-
 }
-
-

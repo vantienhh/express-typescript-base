@@ -1,7 +1,5 @@
-import {check} from 'express-validator'
+import { check } from 'express-validator'
 
 export const validateCreateProduct = () => {
-  return [
-    check('user.email').isEmail()
-  ];
+  return [check('user.email').isEmail()]
 }

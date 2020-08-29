@@ -1,4 +1,4 @@
-import {EventEmitter} from 'events'
+import { EventEmitter } from 'events'
 
 class ProductEventEmitter extends EventEmitter {
   private static instance?: ProductEventEmitter
@@ -9,7 +9,7 @@ class ProductEventEmitter extends EventEmitter {
   }
 
   // Viết function xử lý listener vào đây để dễ kiểm soát
-  listenerTest (data: any) {
+  listenerTest(data: any) {
     console.log('test listener ', data)
   }
 }
