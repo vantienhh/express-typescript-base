@@ -3,7 +3,7 @@
 .DS_Store
 urlRbauction.txt
 
-storage/logs/
+*.log
 
 dist
 node_modules
