@@ -10,7 +10,16 @@ class WinstonLogger {
 
   constructor() {
     this.logger = createLogger({
-      transports: WinstonLogger.getTransports()
+      transports: WinstonLogger.getTransports(),
+      levels: {
+        error: 0,
+        warn: 1,
+        info: 2,
+        http: 3,
+        verbose: 4,
+        debug: 5,
+        silly: 6
+      }
     })
   }
 
@@ -21,20 +30,14 @@ class WinstonLogger {
 
   private static getTransports() {
     const formatLog = printf((message: TransformableInfo) => {
-      return `${message.timestamp} ${message.message}`
+      return `${message.timestamp}  [${message.level.toUpperCase()}] --- ${message.message}`
     })
 
     return [
       new DailyRotateFile({
-        filename: 'src/storage/logs/error.%DATE%.log',
+        filename: 'src/storage/logs/%DATE%.log',
         datePattern: 'YYYY-MM-DD',
-        level: 'error',
-        format: combine(timestamp(), formatLog)
-      }),
-      new DailyRotateFile({
-        filename: 'src/storage/logs/warn.%DATE%.log',
-        datePattern: 'YYYY-MM-DD',
-        level: 'warn',
+        level: 'silly', // logger all level
         format: combine(timestamp(), formatLog)
       })
     ]
@@ -42,12 +45,12 @@ class WinstonLogger {
 
   error(message: string): void {
     console.log('\x1b[31m%s\x1b[0m', message)
-    this.logger.log('error', message)
+    this.logger.error(message)
   }
 
   warn(message: string): void {
     console.log('\x1b[33m%s\x1b[0m', message)
-    this.logger.log('warn', message)
+    this.logger.warn(message)
   }
 }
 

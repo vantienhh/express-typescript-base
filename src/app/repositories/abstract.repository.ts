@@ -1,8 +1,8 @@
 import { Document, Model, FilterQuery, UpdateQuery, QueryFindOneAndUpdateOptions, Aggregate } from 'mongoose'
 import { TypeBaseRepository } from '@/types/Repository'
-import { ProductEmitter } from '@/app/events/ProductEventEmitter'
+import { ProductEmitter } from '@/app/events/product.EventEmitter'
 
-export abstract class BaseRepository<T extends Document> implements TypeBaseRepository {
+export abstract class AbstractRepository<T extends Document> implements TypeBaseRepository {
   protected model: Model<T>
 
   constructor(model: Model<T>) {

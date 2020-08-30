@@ -6,11 +6,11 @@ export const mongooseConnect = () => {
   void mongoose.connect(dbURI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    useCreateIndex: true,
-    server: {
-      poolSize: 10,
-      useMongoClient: true,
-      auto_reconnect: true
-    }
+    useCreateIndex: true
+    // server: {
+    //   poolSize: 10,
+    //   useMongoClient: true,
+    //   auto_reconnect: true
+    // }
   })
 }

@@ -1,7 +1,8 @@
 import { Router } from 'express'
-import apiRoutes from './api'
+import { ApiV1 } from '@/routes/apiV1'
+import { authenticate } from '@/app/http/middleware/authenticate'
 
 const routes = Router()
-routes.use('/api', new apiRoutes().routes)
+routes.use('/api', authenticate, new ApiV1().routes)
 
 export default routes

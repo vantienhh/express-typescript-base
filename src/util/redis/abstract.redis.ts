@@ -1,5 +1,5 @@
 import { RedisClient } from 'redis'
-import { Redis } from '@/plugins/redis/redis'
+import { Redis } from '@/util/redis/redis'
 
 export abstract class AbstractRedis {
   protected redis: typeof Redis
