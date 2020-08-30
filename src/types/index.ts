@@ -1,5 +1,7 @@
 import { Request } from 'express'
 
+export type AnyClass = { new (): any }
+
 export interface IRequest extends Request {
   user_identification?: {
     uid: string

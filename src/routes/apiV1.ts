@@ -1,30 +1,21 @@
 import { Router } from 'express'
 import { Router as coreRouter } from 'express-serve-static-core'
-import UserController from '@/app/http/controllers/api/user.controller'
-import ProductController from '@/app/http/controllers/api/product.controller'
+import { ProductController } from '@/app/http/controllers/api/product.controller'
 import { validateCreateProduct } from '@/app/http/validatons/product.validation'
 
 export class ApiV1 {
-  public routes: coreRouter
+  public router: coreRouter
 
   constructor() {
-    this.routes = Router()
+    this.router = Router()
 
-    this.routesUser()
-    this.routesProduct()
+    this.routerProduct()
   }
 
-  private routesUser(): void {
-    const userController = new UserController()
-
-    this.routes.get('/users', userController.index)
-    this.routes.post('/users/store', userController.store)
-  }
-
-  private routesProduct(): void {
+  private routerProduct(): void {
     const productController = new ProductController()
 
-    this.routes.get('/products', productController.index)
-    this.routes.post('/products/create', validateCreateProduct, productController.create)
+    this.router.get('/products', productController.index)
+    this.router.post('/products/create', validateCreateProduct, productController.create)
   }
 }
