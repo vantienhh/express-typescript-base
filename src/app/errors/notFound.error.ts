@@ -1,4 +1,4 @@
-import { ApiError } from '@/app/errors/apiError'
+import { ApiError } from '@/app/errors/api.error'
 import { HttpStatus } from '@/util/httStatus'
 
 export class NotFoundError extends ApiError {
@@ -6,3 +6,5 @@ export class NotFoundError extends ApiError {
     super(HttpStatus.NOT_FOUND, 'Not Found', [])
   }
 }
+
+NotFoundError.prototype = ApiError.prototype

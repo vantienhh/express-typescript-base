@@ -9,12 +9,16 @@ export abstract class AbstractRepository<T extends Document> implements TypeBase
     this.model = model
   }
 
-  public async create(data: any): Promise<any> {
+  async create(data: any): Promise<any> {
     ProductEmitter.emit('test', 'data ở đây nhé')
     return this.model.create(data)
   }
 
-  public async findOneAndUpdate(
+  async findById(id: string | number | any, callback?: (err: any, res: T | null) => void) {
+    return this.model.findById(id, callback).exec()
+  }
+
+  findOneAndUpdate(
     conditions: FilterQuery<T>,
     update: UpdateQuery<T>,
     options: QueryFindOneAndUpdateOptions = { new: true },
@@ -23,7 +27,7 @@ export abstract class AbstractRepository<T extends Document> implements TypeBase
     return this.model.findOneAndUpdate(conditions, update, options, callback)
   }
 
-  public async aggregate<U = any>(aggregate?: any[]): Aggregate<U[]> {
+  aggregate<U = any>(aggregate?: any[]): Aggregate<U[]> {
     return this.model.aggregate(aggregate)
   }
 }

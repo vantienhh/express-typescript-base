@@ -15,22 +15,19 @@ export default class App {
   constructor() {
     this.express = express()
 
-    this.security()
     this.middleware()
-
     this.database()
-    this.routes()
-
     this.logger()
-    this.handlerErrors()
-  }
 
-  private security(): void {
-    // Set security HTTP headers
-    this.express.use(helmet())
+    this.express.use(routes)
+    this.express.use(handleErrors)
   }
 
   private middleware(): void {
+    // Set security HTTP headers
+    this.express.use(helmet())
+
+    // CORS
     this.express.use(cors())
 
     // Limit request from the same API
@@ -42,15 +39,15 @@ export default class App {
     // apply rate limit request to all requests
     this.express.use(limiter)
 
-    // Body parser, reading data from body into req.body
-    this.express.use(bodyParser.urlencoded({ extended: false }))
-    this.express.use(bodyParser.json())
-
     this.express.use(
       express.json({
         limit: '20kb'
       })
     )
+
+    // Body parser, reading data from body into req.body
+    this.express.use(bodyParser.urlencoded({ extended: false }))
+    this.express.use(bodyParser.json())
   }
 
   private database(): void {
@@ -75,22 +72,14 @@ export default class App {
     }
   }
 
-  private routes(): void {
-    this.express.use(routes)
-  }
-
   private logger(): void {
     // log when PROMISE is rejected and no error handler is attached to the promise
     process.on('unhandledRejection', (reason, promise) => {
-      promise.catch(e => Logger.error(e.stack))
+      promise.catch(err => Logger.error(`${err.name} -- ${err.message} \n ${err.stack}`))
     })
     // log when warning
     process.on('warning', warning => {
       Logger.warn(`${warning.name} -- ${warning.message} \n ${warning.stack}`)
     })
-  }
-
-  private handlerErrors(): void {
-    this.express.use(handleErrors)
   }
 }

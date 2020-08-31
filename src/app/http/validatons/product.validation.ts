@@ -10,7 +10,6 @@ export const validateCreateProduct = (req: Request, res: Response, next: NextFun
 
   try {
     validate(schema, req.body)
-
     next()
   } catch (e) {
     next(e)

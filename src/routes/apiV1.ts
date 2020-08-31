@@ -16,6 +16,7 @@ export class ApiV1 {
     const productController = new ProductController()
 
     this.router.get('/products', productController.index)
+    this.router.get('/products/:id', productController.show)
     this.router.post('/products/create', validateCreateProduct, productController.create)
   }
 }

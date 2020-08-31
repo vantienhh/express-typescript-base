@@ -1,9 +1,10 @@
 import ProductRepository from '@/app/repositories/product.repository'
 import { Request, Response } from 'express'
 import { ProductEmitter } from '@/app/events/product.EventEmitter'
-import { HttpStatus } from '@/util/httStatus'
-import { success, error } from '@/app/http/responses/api.response'
+import { success, notFound } from '@/app/http/responses/api.response'
 import { Controller } from '@/app/http/controllers/controller'
+import { NotFoundError } from '@/app/errors/notFound.error'
+import { HttpStatus } from '@/util/httStatus'
 import { bindAll } from '@/util/helper'
 
 export class ProductController extends Controller {
@@ -18,13 +19,27 @@ export class ProductController extends Controller {
   index(req: Request, res: Response) {
     ProductEmitter.once('test event', ProductEmitter.listenerTest)
 
-    return res.status(200).json('1234')
+    return res.status(200).json('hello word')
+  }
+
+  async show(req: Request, res: Response) {
+    try {
+      const { id } = req.params
+      const data = await this.product.findById(id)
+
+      return res.json(success(data))
+    } catch (e) {
+      if (e instanceof NotFoundError) {
+        return res.status(HttpStatus.NOT_FOUND).json(notFound())
+      }
+      throw e
+    }
   }
 
   async create(req: Request, res: Response) {
     try {
-      const data = await this.product.create([{ name: 'ertyu' }, { name: 'oksokaoaks' }])
-      return res.status(HttpStatus.OK).json(success(data))
+      const data = await this.product.create(req.body)
+      return res.json(success(data))
     } catch (e) {
       throw e
     }

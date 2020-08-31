@@ -4,7 +4,7 @@ import App from '@/app'
 config()
 
 const app = new App().express
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 app.listen(port, () => {
   return console.log(`server is listening on ${port}`)

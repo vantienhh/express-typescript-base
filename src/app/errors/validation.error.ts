@@ -1,4 +1,4 @@
-import { ApiError } from '@/app/errors/apiError'
+import { ApiError } from '@/app/errors/api.error'
 import { HttpStatus } from '@/util/httStatus'
 
 export class ValidationError extends ApiError {
@@ -9,3 +9,5 @@ export class ValidationError extends ApiError {
     super(HttpStatus.UNPROCESSABLE_ENTITY, mess, data)
   }
 }
+
+ValidationError.prototype = ApiError.prototype
