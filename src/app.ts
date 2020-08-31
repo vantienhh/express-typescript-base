@@ -7,6 +7,7 @@ import helmet from 'helmet'
 import routes from '@/routes'
 import { Logger } from '@/util/logger'
 import { mongooseConnect } from '@/util/mongoose'
+import { handleErrors } from '@/util/handlerErrors'
 
 export default class App {
   public express: express.Application
@@ -21,6 +22,7 @@ export default class App {
     this.routes()
 
     this.logger()
+    this.handlerErrors()
   }
 
   private security(): void {
@@ -33,7 +35,7 @@ export default class App {
 
     // Limit request from the same API
     const limiter = rateLimit({
-      max: 50, // 50 request
+      max: 20, // 20 request
       windowMs: 60 * 1000, // 1 minute
       message: 'Too Many Request from this IP, please try again in an hour'
     })
@@ -86,5 +88,9 @@ export default class App {
     process.on('warning', warning => {
       Logger.warn(`${warning.name} -- ${warning.message} \n ${warning.stack}`)
     })
+  }
+
+  private handlerErrors(): void {
+    this.express.use(handleErrors)
   }
 }

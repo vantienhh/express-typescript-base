@@ -26,8 +26,7 @@ export class ProductController extends Controller {
       const data = await this.product.create([{ name: 'ertyu' }, { name: 'oksokaoaks' }])
       return res.status(HttpStatus.OK).json(success(data))
     } catch (e) {
-      this.loggerErrorRequest(req, e)
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error())
+      throw e
     }
   }
 }

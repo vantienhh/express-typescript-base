@@ -1,5 +1,5 @@
 import { AnySchema } from 'joi'
-import { ValidationException } from '@/app/exceptions/validation.exception'
+import { ValidationError } from '@/app/errors/validation.error'
 
 export const validate = (schema: AnySchema, data: any): void => {
   const result = schema.validate(data, {
@@ -14,6 +14,6 @@ export const validate = (schema: AnySchema, data: any): void => {
       errors[key] = detail.message.replace(/"/g, '')
     })
 
-    throw new ValidationException(errors)
+    throw new ValidationError(errors)
   }
 }
