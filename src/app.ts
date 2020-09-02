@@ -7,7 +7,7 @@ import helmet from 'helmet'
 import routes from '@/routes'
 import { Logger } from '@/util/logger'
 import { mongooseConnect } from '@/util/mongoose'
-import { handleException } from '@/util/handler.Exception'
+import { handleException } from '@/util/handler.exception'
 
 export default class App {
   public express: express.Application

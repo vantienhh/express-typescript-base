@@ -1,10 +1,10 @@
 import { AbstractRepository } from '@/app/repositories/abstract.repository'
 import { Product } from '@/app/models/Product'
-import { TypeProductRepository } from '@/types/Repository'
+import { IProductRepository } from '@/types/Repositories'
 import { ProductSchema } from '@/types/Models'
 
-export default new (class ProductRepository extends AbstractRepository<ProductSchema> implements TypeProductRepository {
+export class ProductRepository extends AbstractRepository<ProductSchema> implements IProductRepository {
   constructor() {
     super(Product)
   }
-})()
+}

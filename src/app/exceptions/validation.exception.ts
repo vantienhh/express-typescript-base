@@ -3,17 +3,25 @@ import { HttpStatus } from '@/util/httStatus'
 import { IResponse } from '@/types'
 
 export class ValidationException extends HttpException {
+  public errors: Record<string, any>
+
   constructor(errors: Record<string, any>, message?: string) {
-    const response: IResponse = {
+    super()
+
+    this.name = 'ValidationError'
+    this.message = message || 'Unprocessable Entity'
+    this.errors = errors
+
+    Object.setPrototypeOf(this, ValidationException.prototype)
+  }
+
+  get response(): IResponse {
+    return {
       code: HttpStatus.UNPROCESSABLE_ENTITY,
-      message: message || 'Unprocessable Entity',
+      message: this.message,
       data: {
-        errors: errors
+        errors: this.errors
       }
     }
-
-    super(response)
-    this.name = 'ValidationError'
-    Object.setPrototypeOf(this, ValidationException.prototype)
   }
 }

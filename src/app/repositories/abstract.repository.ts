@@ -1,38 +1,41 @@
-import { Document, Model, FilterQuery, UpdateQuery, QueryFindOneAndUpdateOptions, Aggregate } from 'mongoose'
-import { TypeBaseRepository } from '@/types/Repository'
-import { ProductEmitter } from '@/app/events/product.EventEmitter'
+import { Document, Model, CreateQuery } from 'mongoose'
+import { IAbstractRepository } from '@/types/Repositories'
 import { NotFoundException } from '@/app/exceptions/notFound.exception'
 
-export abstract class AbstractRepository<T extends Document> implements TypeBaseRepository {
-  protected model: Model<T>
+export abstract class AbstractRepository<T extends Document> implements IAbstractRepository {
+  private readonly model: Model<T>
 
-  constructor(model: Model<T>) {
+  protected constructor(model: Model<T>) {
     this.model = model
   }
 
-  async create(data: any): Promise<any> {
-    ProductEmitter.emit('test', 'data ở đây nhé')
-    return this.model.create(data)
+  getModel(): Model<T> {
+    return this.model
   }
 
-  async findById(id: string | number | any, callback?: (err: any, res: T | null) => void) {
-    const result = await this.model.findById(id, callback).exec()
+  create(data: CreateQuery<T>): Promise<T>
+  create(data: CreateQuery<T>[]): Promise<T[]>
+  create(data: CreateQuery<T> | CreateQuery<T>[]): Promise<T | T[]> {
+    // @ts-ignore
+    return this.getModel().create(data)
+  }
+
+  findById(id: string | number): Promise<T | null> {
+    return this.getModel().findById(id).exec()
+  }
+
+  /**
+   * find record by id. If not, then fail
+   *
+   * @param {string | number} id
+   * @param {(err: any, res: (T | null)) => void} callback
+   * @returns {Promise<T>}
+   */
+  async findOrFail(id: string | number, callback?: (err: any, res: T | null) => void): Promise<T> {
+    const result = await this.getModel().findById(id, callback).exec()
     if (result) {
       return result
     }
     throw new NotFoundException()
-  }
-
-  findOneAndUpdate(
-    conditions: FilterQuery<T>,
-    update: UpdateQuery<T>,
-    options: QueryFindOneAndUpdateOptions = { new: true },
-    callback?: (err: any, doc: T | null, res: any) => void
-  ) {
-    return this.model.findOneAndUpdate(conditions, update, options, callback)
-  }
-
-  aggregate<U = any>(aggregate?: any[]): Aggregate<U[]> {
-    return this.model.aggregate(aggregate)
   }
 }

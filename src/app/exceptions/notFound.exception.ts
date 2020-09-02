@@ -4,14 +4,17 @@ import { IResponse } from '@/types'
 
 export class NotFoundException extends HttpException {
   constructor() {
-    const response: IResponse = {
+    super()
+
+    this.name = 'NotFoundError'
+    Object.setPrototypeOf(this, NotFoundException.prototype)
+  }
+
+  get response(): IResponse {
+    return {
       code: HttpStatus.NOT_FOUND,
       message: 'Not Found',
       data: []
     }
-
-    super(response)
-    this.name = 'NotFoundError'
-    Object.setPrototypeOf(this, NotFoundException.prototype)
   }
 }
