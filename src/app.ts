@@ -5,10 +5,10 @@ import mongoose from 'mongoose'
 import rateLimit from 'express-rate-limit'
 import helmet from 'helmet'
 import routes from '@/routes'
-import { Logger } from '@/util/logger'
-import { mongooseConnect } from '@/util/mongoose'
-import { handleException } from '@/util/handler.exception'
-import { HttpStatus } from '@/util/httStatus'
+import { Logger } from '@/utils/logger'
+import { mongooseConnect } from '@/utils/mongoose'
+import { handleException } from '@/utils/handler.exception'
+import { HttpStatus } from '@/utils/http-status'
 
 export default class App {
   public express: express.Application

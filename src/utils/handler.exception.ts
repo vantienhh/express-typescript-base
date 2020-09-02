@@ -1,6 +1,6 @@
 import { Request, NextFunction, Response } from 'express'
-import { HttpStatus } from '@/util/httStatus'
-import { Logger } from '@/util/logger'
+import { HttpStatus } from '@/utils/http-status'
+import { Logger } from '@/utils/logger'
 import { HttpException } from '@/app/exceptions/http.exception'
 
 export const handleException = (err: Error, req: Request, res: Response, next: NextFunction): any => {

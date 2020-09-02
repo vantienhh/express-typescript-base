@@ -1,5 +1,5 @@
 import { HttpException } from '@/app/exceptions/http.exception'
-import { HttpStatus } from '@/util/httStatus'
+import { HttpStatus } from '@/utils/http-status'
 import { IResponse } from '@/types'
 
 export class NotFoundException extends HttpException {

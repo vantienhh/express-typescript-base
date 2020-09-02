@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import { success } from '@/app/http/responses/api.response'
-import { bindAll } from '@/util/helper'
+import { bindAll } from '@/utils/helper'
 import { ProductService } from '@/app/services/product.service'
 import { IProductService } from '@/types/Services'
 

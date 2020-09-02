@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { ApiV1 } from '@/routes/apiV1'
+import { ApiV1 } from '@/routes/api-v1'
 import { authenticate } from '@/app/http/middleware/authenticate'
 
 const routes = Router()

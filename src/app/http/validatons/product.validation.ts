@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import Joi, { AnySchema } from 'joi'
-import { validate } from '@/util/validate'
+import { validate } from '@/utils/validate'
 
 export const validateCreateProduct = (req: Request, res: Response, next: NextFunction) => {
   try {
