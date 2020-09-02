@@ -7,7 +7,7 @@ import helmet from 'helmet'
 import routes from '@/routes'
 import { Logger } from '@/util/logger'
 import { mongooseConnect } from '@/util/mongoose'
-import { handleErrors } from '@/util/handlerErrors'
+import { handleException } from '@/util/handler.Exception'
 
 export default class App {
   public express: express.Application
@@ -20,7 +20,7 @@ export default class App {
     this.logger()
 
     this.express.use(routes)
-    this.express.use(handleErrors)
+    this.express.use(handleException)
   }
 
   private middleware(): void {

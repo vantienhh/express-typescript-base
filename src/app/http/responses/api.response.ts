@@ -1,7 +1,7 @@
-import { ResultResponse } from '@/types'
+import { IResponse } from '@/types'
 import { HttpStatus } from '@/util/httStatus'
 
-export const success = (data: any): ResultResponse => {
+export const success = (data: any): IResponse => {
   return {
     code: HttpStatus.OK,
     message: 'Success',
@@ -9,7 +9,7 @@ export const success = (data: any): ResultResponse => {
   }
 }
 
-export const notFound = (): ResultResponse => {
+export const notFound = (): IResponse => {
   return {
     code: HttpStatus.NOT_FOUND,
     message: 'Not Found',
@@ -17,7 +17,7 @@ export const notFound = (): ResultResponse => {
   }
 }
 
-export const deleteSuccess = (): ResultResponse => {
+export const deleteSuccess = (): IResponse => {
   return {
     code: HttpStatus.OK,
     message: 'Deleted Success',
@@ -25,7 +25,7 @@ export const deleteSuccess = (): ResultResponse => {
   }
 }
 
-export const validationError = (data: any): ResultResponse => {
+export const validationError = (data: any): IResponse => {
   return {
     code: HttpStatus.UNPROCESSABLE_ENTITY,
     message: 'Unprocessable Entity',
@@ -35,7 +35,7 @@ export const validationError = (data: any): ResultResponse => {
   }
 }
 
-export const error = (message = 'Internal Server Error'): ResultResponse => {
+export const error = (message = 'Internal Server Error'): IResponse => {
   return {
     code: HttpStatus.INTERNAL_SERVER_ERROR,
     message

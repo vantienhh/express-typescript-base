@@ -10,12 +10,8 @@ export interface IRequest extends Request {
   }
 }
 
-export interface ResultResponse {
+export interface IResponse {
   code: number
   message: string
   data?: any
-}
-
-export interface SuccessResponse {
-  (data: any, code: number, message: string): ResultResponse
 }

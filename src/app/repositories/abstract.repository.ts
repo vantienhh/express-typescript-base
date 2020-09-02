@@ -1,6 +1,7 @@
 import { Document, Model, FilterQuery, UpdateQuery, QueryFindOneAndUpdateOptions, Aggregate } from 'mongoose'
 import { TypeBaseRepository } from '@/types/Repository'
 import { ProductEmitter } from '@/app/events/product.EventEmitter'
+import { NotFoundException } from '@/app/exceptions/notFound.exception'
 
 export abstract class AbstractRepository<T extends Document> implements TypeBaseRepository {
   protected model: Model<T>
@@ -15,7 +16,11 @@ export abstract class AbstractRepository<T extends Document> implements TypeBase
   }
 
   async findById(id: string | number | any, callback?: (err: any, res: T | null) => void) {
-    return this.model.findById(id, callback).exec()
+    const result = await this.model.findById(id, callback).exec()
+    if (result) {
+      return result
+    }
+    throw new NotFoundException()
   }
 
   findOneAndUpdate(
