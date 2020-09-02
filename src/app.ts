@@ -8,6 +8,7 @@ import routes from '@/routes'
 import { Logger } from '@/util/logger'
 import { mongooseConnect } from '@/util/mongoose'
 import { handleException } from '@/util/handler.exception'
+import { HttpStatus } from '@/util/httStatus'
 
 export default class App {
   public express: express.Application
@@ -28,16 +29,24 @@ export default class App {
     this.express.use(helmet())
 
     // CORS
-    this.express.use(cors())
+    this.express.use(
+      cors({
+        origin: 'https://example.com',
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        preflightContinue: false,
+        optionsSuccessStatus: HttpStatus.OK
+      })
+    )
 
-    // Limit request from the same API
-    const limiter = rateLimit({
-      max: 20, // 20 request
-      windowMs: 60 * 1000, // 1 minute
-      message: 'Too Many Request from this IP, please try again in an hour'
-    })
     // apply rate limit request to all requests
-    this.express.use(limiter)
+    this.express.use(
+      rateLimit({
+        max: 20, // 20 request
+        windowMs: 60 * 1000, // 1 minute
+        message: 'Too Many Request from this IP, please try again in an hour'
+      })
+    )
 
     this.express.use(
       express.json({

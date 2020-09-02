@@ -11,14 +11,14 @@ $ npm install
 ## Running the app
 ```
 # development
-npm run start:dev
+$ npm run start:dev
 
 # debug
-npm run start:debug
+$ npm run start:debug
 
 # build
-npm run build
+$ npm run build
 
 # production mode
-npm run start
+$ npm run start
 ```

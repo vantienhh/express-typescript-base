@@ -1,7 +1,7 @@
 {
   "name": "express_typescript_base",
   "version": "1.0.0",
-  "description": "an example project with expressjs and typescript",
+  "description": "a base project nodejs use expressjs and typescript",
   "author": "Lê Văn Tiến",
   "license": "ISC",
   "main": "index.js",
