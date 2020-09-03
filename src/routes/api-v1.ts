@@ -17,6 +17,6 @@ export class ApiV1 {
 
     this.router.get('/products', productController.index)
     this.router.get('/products/:id', productController.show)
-    this.router.post('/products/create', validateCreateProduct, productController.create)
+    this.router.post('/products', validateCreateProduct, productController.create)
   }
 }

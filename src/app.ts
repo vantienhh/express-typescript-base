@@ -50,7 +50,7 @@ export default class App {
 
     this.express.use(
       express.json({
-        limit: '20kb'
+        limit: '50kb'
       })
     )
 
