@@ -1,5 +1,5 @@
 import { HttpException } from '@/app/exceptions/http.exception'
-import { HttpStatus } from '@/utils/http-status'
+import { HttpStatus } from '@/utils/config'
 import { IResponse } from '@/types'
 
 export class ValidationException extends HttpException {

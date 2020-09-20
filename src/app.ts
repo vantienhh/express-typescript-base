@@ -5,10 +5,9 @@ import mongoose from 'mongoose'
 import rateLimit from 'express-rate-limit'
 import helmet from 'helmet'
 import routes from '@/routes'
-import { Logger } from '@/utils/logger'
-import { mongooseConnect } from '@/utils/mongoose'
-import { handleException } from '@/utils/handler.exception'
-import { HttpStatus } from '@/utils/http-status'
+import { HttpStatus, Logger, mongooseConnect } from '@/utils'
+import { HttpException } from '@/app/exceptions/http.exception'
+import { IResponse } from '@/types'
 
 export default class App {
   public express: express.Application
@@ -21,7 +20,7 @@ export default class App {
     this.logger()
 
     this.express.use(routes)
-    this.express.use(handleException)
+    this.express.use(App.exceptionHandler)
   }
 
   private middleware(): void {
@@ -89,6 +88,37 @@ export default class App {
     // log when warning
     process.on('warning', warning => {
       Logger.warn(`${warning.name} -- ${warning.message} \n ${warning.stack}`)
+    })
+  }
+
+  /**
+   * The default error handler
+   *
+   * @param {Error} err
+   * @param {e.Request} req
+   * @param {e.Response} res
+   * @param {e.NextFunction} next
+   * @returns {e.Response<IResponse>}
+   * @private
+   */
+  private static exceptionHandler(
+    err: Error,
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ): express.Response<IResponse> {
+    if (err instanceof HttpException) {
+      return res.status(err.response.code).json(err.response)
+    }
+
+    const messageLog = `${err.name} -- ${err.message} \n ${err.stack}`
+    Logger.error(`[${req.method}] ${req.originalUrl} --- ${messageLog}`)
+
+    const mess = process.env.NODE_ENV === 'production' ? 'Internal server error' : err.stack
+    return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      code: HttpStatus.INTERNAL_SERVER_ERROR,
+      message: mess,
+      data: []
     })
   }
 }

@@ -1,4 +1,5 @@
 import { ClientOpts, createClient, RedisClient } from 'redis'
+import { Logger } from '@/utils/logger'
 
 class ConnectRedis {
   private readonly client: RedisClient
@@ -23,7 +24,7 @@ class ConnectRedis {
       console.log('Redis client connected')
     })
     this.client.on('error', error => {
-      console.error(error)
+      Logger.error(error)
     })
   }
 

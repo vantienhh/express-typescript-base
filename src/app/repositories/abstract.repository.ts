@@ -29,6 +29,8 @@ export abstract class AbstractRepository<T extends Document> implements IAbstrac
    *
    * @param {string | number} id
    * @param {(err: any, res: (T | null)) => void} callback
+   *
+   * @throws NotFoundException
    * @returns {Promise<T>}
    */
   async findOrFail(id: string | number, callback?: (err: any, res: T | null) => void): Promise<T> {

@@ -11,12 +11,13 @@ module.exports = {
       './tsconfig.json'
     ]
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'security'],
   extends: [
     'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:security/recommended'
   ],
   rules: {
     '@typescript-eslint/no-floating-promises': 'error',

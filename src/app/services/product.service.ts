@@ -2,7 +2,7 @@ import { ProductRepository } from '@/app/repositories/product.repository'
 import { IProductRepository } from '@/types/Repositories'
 import { IProductService } from '@/types/Services'
 import { ProductSchema } from '@/types/Models'
-import { newProductEvent } from '@/app/events/dispatcher'
+import { createProductEvent } from '@/app/events/dispatcher'
 
 export class ProductService implements IProductService {
   protected product: IProductRepository
@@ -20,7 +20,7 @@ export class ProductService implements IProductService {
   create(data: ProductSchema[]): Promise<ProductSchema[]>
   create(data: ProductSchema | ProductSchema[]): Promise<ProductSchema | ProductSchema[]> {
     const result = this.product.create(data)
-    newProductEvent('product')
+    createProductEvent('product')
     return result
   }
 }

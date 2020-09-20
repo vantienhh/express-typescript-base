@@ -1,3 +1,3 @@
-export function newProductListener(data: string): void {
-  console.log('newProductListener', data)
+export function createProductListener(data: string): void {
+  console.log('createProductListener', data)
 }

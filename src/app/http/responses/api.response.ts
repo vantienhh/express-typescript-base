@@ -1,5 +1,5 @@
 import { IResponse } from '@/types'
-import { HttpStatus } from '@/utils/http-status'
+import { HttpStatus } from '@/utils/config'
 
 export const success = (data: any): IResponse => {
   return {
