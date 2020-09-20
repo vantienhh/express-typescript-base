@@ -11,10 +11,12 @@
     "build": "babel src -d dist --extensions \".ts\" --config-file ./.babelrc",
     "start": "node dist/index.js",
     "start:dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
-    "start:dev_cluster": "ts-node-dev -r tsconfig-paths/register src/cluster.ts",
+    "start:dev_cluster": "ts-node-dev -r tsconfig-paths/register src/examples/cluster.example.ts",
     "start:debug": "ts-node-dev --inspect=9229 -r tsconfig-paths/register src/index.ts",
     "pm2": "pm2 start dist/index.js --name=homepage --watch=true --instances=4",
-    "pm2_delete": "pm2 delete homepage"
+    "pm2_delete": "pm2 delete homepage",
+    "thread:not": "ts-node-dev -r tsconfig-paths/register src/examples/multithread/notUse.multithread.ts",
+    "thread:use": "ts-node-dev -r tsconfig-paths/register src/examples/multithread/use.multithread.ts"
   },
   "husky": {
     "hooks": {
