@@ -1,42 +1,42 @@
-import { config } from 'dotenv'
-import { cpus } from 'os'
-import cluster from 'cluster'
-import App from '@/app'
+import { config } from 'dotenv';
+import { cpus } from 'os';
+import cluster from 'cluster';
+import App from '@/app';
 
-config()
+config();
 
-const port = process.env.PORT || 3002
-const numCPUs = cpus().length
+const port = process.env.PORT || 3002;
+const numCPUs = cpus().length;
 
 if (cluster.isMaster) {
-  masterProcess()
+  masterProcess();
 } else {
-  childProcess()
+  childProcess();
 }
 
 function masterProcess() {
-  console.log(`Master ${process.pid} is running`)
+  console.log(`Master ${process.pid} is running`);
 
   for (let i = 0; i < numCPUs; i++) {
-    console.log(`Forking process number ${i}...`)
-    cluster.fork()
+    console.log(`Forking process number ${i}...`);
+    cluster.fork();
   }
 }
 
 function childProcess() {
-  console.log(`Worker ${process.pid} started...`)
+  console.log(`Worker ${process.pid} started...`);
 
-  const app = new App().express
+  const app = new App().express;
 
   app.listen(port, () => {
-    return console.log(`server is listening on ${port}`)
-  })
+    return console.log(`server is listening on ${port}`);
+  });
 }
 
 cluster.on('exit', worker => {
-  console.log('mayday! mayday! worker', worker.id, ' is no more!')
-  cluster.fork()
-})
+  console.log('mayday! mayday! worker', worker.id, ' is no more!');
+  cluster.fork();
+});
 
 // let workers: Array<Worker> = []
 

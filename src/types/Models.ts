@@ -1,10 +1,10 @@
-import { Document } from 'mongoose'
+import { Document } from 'mongoose';
 
 export interface UserSchema extends Document {
-  name: string
-  email: string
+  name: string;
+  email: string;
 }
 
 export interface ProductSchema extends Document {
-  name: string
+  name: string;
 }

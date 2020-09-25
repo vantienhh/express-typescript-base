@@ -1,2 +1,2 @@
-export * from './abstract.redis'
-export * from './redis'
+export * from './abstract.redis';
+export * from './redis';

@@ -1,11 +1,11 @@
-import { config } from 'dotenv'
-import App from '@/app'
+import { config } from 'dotenv';
+import App from '@/app';
 
-config()
+config();
 
-const app = new App().express
-const port = process.env.PORT || 3001
+const app = new App().express;
+const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
-  return console.log(`server is listening on ${port}`)
-})
+  return console.log(`server is listening on ${port}`);
+});

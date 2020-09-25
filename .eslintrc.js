@@ -20,6 +20,7 @@ module.exports = {
     'plugin:security/recommended'
   ],
   rules: {
+    semi: 'error',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/return-await': 'error',

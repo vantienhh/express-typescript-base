@@ -1,7 +1,7 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 export const mongooseConnect = () => {
-  const dbURI = process.env.MONGO_URI || 'mongodb://localhost:27017/test_nodejs'
+  const dbURI = process.env.MONGO_URI || 'mongodb://localhost:27017/test_nodejs';
 
   void mongoose.connect(dbURI, {
     useUnifiedTopology: true,
@@ -12,5 +12,5 @@ export const mongooseConnect = () => {
     //   useMongoClient: true,
     //   auto_reconnect: true
     // }
-  })
-}
+  });
+};

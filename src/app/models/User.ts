@@ -1,5 +1,5 @@
-import mongoose, { SchemaOptions, model } from 'mongoose'
-import { UserSchema } from '@/types/Models'
+import mongoose, { SchemaOptions, model } from 'mongoose';
+import { UserSchema } from '@/types/Models';
 
 function userSchemaOptions(): SchemaOptions {
   const transform = (doc: any, ret: UserSchema) => {
@@ -7,8 +7,8 @@ function userSchemaOptions(): SchemaOptions {
       id: ret._id,
       name: ret.name,
       email: ret.email
-    }
-  }
+    };
+  };
   return {
     toJSON: {
       transform
@@ -20,7 +20,7 @@ function userSchemaOptions(): SchemaOptions {
       createdAt: 'created_at',
       updatedAt: 'updated_at'
     }
-  }
+  };
 }
 
 const UserSchema1 = new mongoose.Schema(
@@ -39,6 +39,6 @@ const UserSchema1 = new mongoose.Schema(
     }
   },
   userSchemaOptions()
-)
+);
 
-export const User = model<UserSchema>('users', UserSchema1)
+export const User = model<UserSchema>('users', UserSchema1);

@@ -1,1 +1,1 @@
-export * from '@/utils/logger/winston.logger'
+export * from '@/utils/logger/winston.logger';

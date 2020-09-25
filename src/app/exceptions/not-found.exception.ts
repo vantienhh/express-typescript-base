@@ -1,13 +1,13 @@
-import { HttpException } from '@/app/exceptions/http.exception'
-import { HttpStatus } from '@/utils/config'
-import { IResponse } from '@/types'
+import { HttpException } from '@/app/exceptions/http.exception';
+import { HttpStatus } from '@/utils/config';
+import { IResponse } from '@/types';
 
 export class NotFoundException extends HttpException {
   constructor() {
-    super()
+    super();
 
-    this.name = 'NotFoundError'
-    Object.setPrototypeOf(this, NotFoundException.prototype)
+    this.name = 'NotFoundError';
+    Object.setPrototypeOf(this, NotFoundException.prototype);
   }
 
   get response(): IResponse {
@@ -15,6 +15,6 @@ export class NotFoundException extends HttpException {
       code: HttpStatus.NOT_FOUND,
       message: 'Not Found',
       data: []
-    }
+    };
   }
 }

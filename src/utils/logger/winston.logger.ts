@@ -1,12 +1,12 @@
-import { Logger as WinstonLog, createLogger, format } from 'winston'
-import { TransformableInfo } from 'logform'
-import DailyRotateFile from 'winston-daily-rotate-file'
+import { Logger as WinstonLog, createLogger, format } from 'winston';
+import { TransformableInfo } from 'logform';
+import DailyRotateFile from 'winston-daily-rotate-file';
 
-const { combine, timestamp, printf } = format
+const { combine, timestamp, printf } = format;
 
 class WinstonLogger {
-  private readonly logger: WinstonLog
-  private static instance?: WinstonLogger
+  private static instance?: WinstonLogger;
+  private readonly logger: WinstonLog;
 
   constructor() {
     this.logger = createLogger({
@@ -20,18 +20,18 @@ class WinstonLogger {
         debug: 5,
         silly: 6
       }
-    })
+    });
   }
 
   static getInstance(): WinstonLogger {
-    if (!WinstonLogger.instance) WinstonLogger.instance = new WinstonLogger()
-    return WinstonLogger.instance
+    if (!WinstonLogger.instance) WinstonLogger.instance = new WinstonLogger();
+    return WinstonLogger.instance;
   }
 
   private static getTransports() {
     const formatLog = printf((message: TransformableInfo) => {
-      return `${message.timestamp}  [${message.level.toUpperCase()}] --- ${message.message}`
-    })
+      return `${message.timestamp}  [${message.level.toUpperCase()}] --- ${message.message}`;
+    });
 
     return [
       new DailyRotateFile({
@@ -40,26 +40,26 @@ class WinstonLogger {
         level: 'silly', // logger all level
         format: combine(timestamp(), formatLog)
       })
-    ]
+    ];
   }
 
   private static getMessage(message: any) {
     if (message instanceof Error) {
-      return `${message.name} -- ${message.message} -- ${message.stack}`
+      return `${message.name} -- ${message.message} -- ${message.stack}`;
     }
 
-    return message
+    return message;
   }
 
   error(message: any): void {
-    console.log('\x1b[31m%s\x1b[0m', message)
-    this.logger.error(WinstonLogger.getMessage(message))
+    console.log('\x1b[31m%s\x1b[0m', message);
+    this.logger.error(WinstonLogger.getMessage(message));
   }
 
   warn(message: any): void {
-    console.log('\x1b[33m%s\x1b[0m', message)
-    this.logger.warn(WinstonLogger.getMessage(message))
+    console.log('\x1b[33m%s\x1b[0m', message);
+    this.logger.warn(WinstonLogger.getMessage(message));
   }
 }
 
-export const Logger = WinstonLogger.getInstance()
+export const Logger = WinstonLogger.getInstance();

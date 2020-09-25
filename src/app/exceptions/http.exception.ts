@@ -1,12 +1,12 @@
-import { IResponse } from '@/types'
+import { IResponse } from '@/types';
 
 export abstract class HttpException extends Error {
   protected constructor() {
-    super()
+    super();
 
-    this.name = 'HttpException'
-    Object.setPrototypeOf(this, HttpException.prototype)
+    this.name = 'HttpException';
+    Object.setPrototypeOf(this, HttpException.prototype);
   }
 
-  abstract get response(): IResponse
+  abstract get response(): IResponse;
 }
