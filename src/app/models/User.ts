@@ -23,7 +23,7 @@ function userSchemaOptions(): SchemaOptions {
   };
 }
 
-const UserSchema1 = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -41,4 +41,4 @@ const UserSchema1 = new mongoose.Schema(
   userSchemaOptions()
 );
 
-export const User = model<UserSchema>('users', UserSchema1);
+export const User = model<UserSchema>('users', userSchema);

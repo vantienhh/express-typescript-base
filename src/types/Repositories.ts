@@ -1,4 +1,4 @@
-import { Document, Model, DocumentQuery, CreateQuery } from 'mongoose';
+import { Document, Model, CreateQuery } from 'mongoose';
 import { ProductSchema } from '@/types/Models';
 
 export interface IAbstractRepository<T extends Document = Document> {
@@ -20,7 +20,7 @@ export interface IAbstractRepository<T extends Document = Document> {
    *
    * @param {string | number} id
    * @param {(err: any, res: (T | null)) => void} callback
-   * @returns {Promise<DocumentQuery<T | null, T>>}
+   * @returns {Promise<T>}
    */
   findOrFail(id: string | number, callback?: (err: any, res: T | null) => void): Promise<T>;
 }

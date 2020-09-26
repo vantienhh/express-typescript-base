@@ -25,16 +25,6 @@ export const deleteSuccess = (): IResponse => {
   };
 };
 
-export const validationError = (data: any): IResponse => {
-  return {
-    code: HttpStatus.UNPROCESSABLE_ENTITY,
-    message: 'Unprocessable Entity',
-    data: {
-      errors: data
-    }
-  };
-};
-
 export const error = (message = 'Internal Server Error'): IResponse => {
   return {
     code: HttpStatus.INTERNAL_SERVER_ERROR,

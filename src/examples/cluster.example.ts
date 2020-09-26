@@ -6,7 +6,7 @@ import App from '@/app';
 config();
 
 const port = process.env.PORT || 3002;
-const numCPUs = cpus().length;
+const numCpus = cpus().length;
 
 if (cluster.isMaster) {
   masterProcess();
@@ -17,7 +17,7 @@ if (cluster.isMaster) {
 function masterProcess() {
   console.log(`Master ${process.pid} is running`);
 
-  for (let i = 0; i < numCPUs; i++) {
+  for (let i = 0; i < numCpus; i++) {
     console.log(`Forking process number ${i}...`);
     cluster.fork();
   }
@@ -44,7 +44,7 @@ cluster.on('exit', worker => {
 //   console.log(`Master ${process.pid} is running`)
 //
 //   // Fork workers
-//   for (let i = 0; i < numCPUs; i++) {
+//   for (let i = 0; i < numCpus; i++) {
 //     console.log(`Forking process number ${i}...`)
 //
 //     const worker = cluster.fork()

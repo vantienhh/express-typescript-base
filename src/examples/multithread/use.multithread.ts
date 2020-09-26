@@ -24,7 +24,7 @@ for (let i = 0; i < threads; i++) {
   });
 }
 
-function handleMessage(_: any, index: number) {
+function handleMessage(data: any, index: number) {
   names[index]++;
   logUpdate(names.map((status, i) => `Thread ${i}: ${status}`).join('\n'));
 }

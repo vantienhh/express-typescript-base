@@ -1,7 +1,7 @@
 import mongoose, { SchemaOptions, model } from 'mongoose';
 import { ProductSchema } from '@/types/Models';
 
-function ProductSchemaOptions(): SchemaOptions {
+function productSchemaOptions(): SchemaOptions {
   const transform = (doc: any, ret: ProductSchema) => {
     return {
       id: ret._id,
@@ -22,7 +22,7 @@ function ProductSchemaOptions(): SchemaOptions {
   };
 }
 
-const ProductSchema1 = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -31,7 +31,7 @@ const ProductSchema1 = new mongoose.Schema(
       minlength: [2, 'Name phải có ít nhất 2 ký tự']
     }
   },
-  ProductSchemaOptions()
+  productSchemaOptions()
 );
 
-export const Product = model<ProductSchema>('products', ProductSchema1);
+export const Product = model<ProductSchema>('products', productSchema);
