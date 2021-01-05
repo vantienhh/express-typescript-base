@@ -1,7 +1,7 @@
 import { Document, Model, CreateQuery } from 'mongoose';
 import { ProductSchema } from '@/types/Models';
 
-export interface IAbstractRepository<T extends Document = Document> {
+export interface IAbstractRepository<T extends Document> {
   getModel(): Model<T>;
 
   create(data: CreateQuery<T>): Promise<T>;

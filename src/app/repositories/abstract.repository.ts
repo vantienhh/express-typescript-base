@@ -2,7 +2,7 @@ import { Document, Model, CreateQuery } from 'mongoose';
 import { IAbstractRepository } from '@/types/Repositories';
 import { NotFoundException } from '@/app/exceptions/not-found.exception';
 
-export abstract class AbstractRepository<T extends Document> implements IAbstractRepository {
+export abstract class AbstractRepository<T extends Document> implements IAbstractRepository<T> {
   private readonly model: Model<T>;
 
   protected constructor(model: Model<T>) {

@@ -1,24 +1,24 @@
 ## Environment
-- node (v14.5)
+- node (v12.9)
 - redis
 - mongodb
 
 ## Install
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
 ```
 # development
-$ npm run start:dev
+$ yarn start:dev
 
 # debug
-$ npm run start:debug
+$ yarn start:debug
 
 # build
-$ npm run build
+$ yarn build
 
 # production mode
-$ npm run start
+$ yarn start
 ```
