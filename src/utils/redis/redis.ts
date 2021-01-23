@@ -3,6 +3,7 @@ import { Logger } from '@/utils/logger';
 
 class ConnectRedis {
   private static instance?: ConnectRedis;
+
   private readonly client: RedisClient;
 
   constructor() {

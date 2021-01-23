@@ -21,6 +21,23 @@ function masterProcess() {
     console.log(`Forking process number ${i}...`);
     cluster.fork();
   }
+
+  // Khi 'vòng đời' của Workers kết thúc,cluster sẽ tạo ra một 'exit' event
+  // cho phép ta dùng chúng để thêm mới các Worker process
+  cluster.on('exit', function handleExit(worker, code, signal) {
+    console.log('[Cluster]', 'Worker kết thúc.', worker.process.pid);
+    console.log('[Cluster]', 'Tử ẹo:', worker.exitedAfterDisconnect);
+
+    // Nếu một Worker bị buộc kết thúc một cách vô ý như không bắt (catch) được ngoại lệ (exception).
+    // Thì khi đó ta sẽ thử (try) tái tạo lại (restart) nó.
+    if (!worker.exitedAfterDisconnect) {
+      const worker = cluster.fork();
+
+      // CHÝ Ý: Nếu Worker kết thúc ngay lập tức, có lẽ do code bị bug,
+      // bạn có thể dính lỗi [theo tôi BIẾT] tiêu thụ tài nguyên CPU liên tục
+      // (rapid CPU Consumption) do Master liên tiếp thử tạo mới các Worker.
+    }
+  });
 }
 
 function childProcess() {

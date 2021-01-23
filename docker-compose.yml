@@ -1,0 +1,18 @@
+version: "3.9"
+
+networks:
+  db-common:
+    external:
+      name: db-persistent-stack
+
+services:
+  express-typescript-base:
+    build: .
+    container_name: express-typescript-base
+    ports:
+      - 3411:3412
+    env_file:
+      - .env.docker
+    networks:
+      - db-common
+

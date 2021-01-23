@@ -6,6 +6,7 @@ const { combine, timestamp, printf } = format;
 
 class WinstonLogger {
   private static instance?: WinstonLogger;
+
   private readonly logger: WinstonLog;
 
   constructor() {
